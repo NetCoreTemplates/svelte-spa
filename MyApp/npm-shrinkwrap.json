@@ -2049,11 +2049,11 @@
       }
     },
     "navaid": {
-      "version": "1.0.0",
-      "resolved": "https://registry.npmjs.org/navaid/-/navaid-1.0.0.tgz",
-      "integrity": "sha512-K+gfVdiO36xjlv0dDDscX2zN2x+lsxHGgfQqAvKJ11uMxCFVA9MgSVXbAqW1AIq0OXVtPRTUmEHCysSFOa83rA==",
+      "version": "1.0.1",
+      "resolved": "https://registry.npmjs.org/navaid/-/navaid-1.0.1.tgz",
+      "integrity": "sha512-3EGRFFy3NhkHytwbAMgVCFf1I3/e289hwUes1PCw8co4I5TNtoWzuUdnwQIbcMt+rlELxFJCOFszMa3iL9nt2A==",
       "requires": {
-        "regexparam": "^0.0.1"
+        "regexparam": "^1.0.2"
       }
     },
     "nice-try": {
@@ -2389,9 +2389,9 @@
       }
     },
     "regexparam": {
-      "version": "0.0.1",
-      "resolved": "https://registry.npmjs.org/regexparam/-/regexparam-0.0.1.tgz",
-      "integrity": "sha512-ZAWSvAXXL3WaoF9wVCo+PWzIaiQ81jk87OaFOJ2CQ0ld/seonv9kbCmWdEEA4fEY0SQNiSBV0zidWUAw77cryw=="
+      "version": "1.2.1",
+      "resolved": "https://registry.npmjs.org/regexparam/-/regexparam-1.2.1.tgz",
+      "integrity": "sha512-L/xx/JNXFvejDD9b4FukSh2wCyYUpxSTnLkMpcZc/ygnmaF6ETnphh+FDKZS8XBGmu2e3GoZ1why9qkTYqr1ag=="
     },
     "repeat-element": {
       "version": "1.1.3",
@@ -2970,9 +2970,9 @@
       }
     },
     "svelte": {
-      "version": "3.0.0",
-      "resolved": "https://registry.npmjs.org/svelte/-/svelte-3.0.0.tgz",
-      "integrity": "sha512-4QQ7eBuVw/t0kMSSjLCiAjQYTj7ZF0OtH24YOWtTrTJHTLd58gEAPZeKSGOYDXtwpcrMi4Cxo3MgEbdI1m4erg==",
+      "version": "3.0.1",
+      "resolved": "https://registry.npmjs.org/svelte/-/svelte-3.0.1.tgz",
+      "integrity": "sha512-JqbUSVC/8fCmZcqeNs4yR6XjJduRhH973n5g6Pvu7lYoP9NPxPqAmJxQ8UUF5FTxRHeijZSkxLatE8DCVR9z1w==",
       "dev": true
     },
     "terser": {

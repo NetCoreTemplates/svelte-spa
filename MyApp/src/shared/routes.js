@@ -15,15 +15,7 @@ export const routes = [
 ];
 
 const render = (Component) => () => component = Component;
-const on404  = (u) => { 
-	if (u.indexOf('/http') === 0) {
-		location.replace(u.substring(1))
-		return;
-	}
-
-	component = null; 
-	uri = u; 
-};
+const on404  = (u) => { component = null; uri = u; };
 
 export const router = navaid('/', on404);
 for (let route of routes) {
