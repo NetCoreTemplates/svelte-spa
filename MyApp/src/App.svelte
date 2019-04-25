@@ -13,12 +13,12 @@ checkAuth();
 <nav class="navbar navbar-expand-lg navbar-dark">
 	<div class="container">
 		<a class="navbar-brand" href="/">
-			MyApp
+			My App
 		</a>
-		<div class="collapse navbar-collapse" id="navbarResponsive">
+		<div class="navbar-collapse">
 			<ul class="navbar-nav mr-auto">
 			{#each routes as {path, label, exact} (label) }
-				<li class:active={exact ? pathname == path : pathname.startsWith(path)}>
+				<li class="nav-item" class:active={exact ? pathname == path : pathname.startsWith(path)}>
 					<a class="nav-link" href="{path}">{label}</a>
 				</li>
 			{/each}
