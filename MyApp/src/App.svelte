@@ -1,4 +1,4 @@
-<svelte:window on:pushstate={x => pathname = x.target.location.pathname}/>
+<svelte:window on:pushstate={x => pathname = x.target.location.pathname} on:popstate={x => pathname = x.target.location.pathname}/>
 
 <script>
 import Error404 from './components/Error404.svelte';
