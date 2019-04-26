@@ -1,6 +1,6 @@
 # svelte-spa
 
-.NET Core 2.1 svelte v3 rollup App Project Template integrated with ServiceStack Services and built-in Routing, User Registration and Sign Up forms.
+.NET Core 2.1 Svelte v3 Rollup Project Template integrated with ServiceStack Services and built-in Routing, User Registration and Sign Up forms.
 
 [![](https://raw.githubusercontent.com/ServiceStack/Assets/master/csharp-templates/svelte-spa.png)](http://svelte-spa.web-templates.io/)
 
@@ -11,6 +11,10 @@
     $ web new svelte-spa ProjectName
 
 ## Development workflow
+
+[![](https://raw.githubusercontent.com/ServiceStack/Assets/master/img/screencasts/svelte-spa-youtube.png)](https://youtu.be/cKlFABFECnQ)
+
+> [YouTube Demo](https://youtu.be/cKlFABFECnQ)
 
 Run the `dev` npm script or Gulp task and leave it running in the background:
 
