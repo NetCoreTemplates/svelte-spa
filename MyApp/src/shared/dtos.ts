@@ -1,8 +1,8 @@
 /* Options:
-Date: 2019-04-24 23:07:47
+Date: 2019-04-26 12:57:28
 Version: 5.51
 Tip: To override a DTO option, remove "//" prefix before updating
-BaseUrl: http://localhost:5000
+BaseUrl: https://localhost:5001
 
 //GlobalNamespace: 
 //AddServiceStackTypes: True
