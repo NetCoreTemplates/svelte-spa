@@ -9,7 +9,7 @@
     "publish": "npm run build && dotnet publish -c Release"
   },
   "dependencies": {
-    "@servicestack/client": "^1.0.20",
+    "@servicestack/client": "^1.0.29",
     "classnames": "^2.2.6",
     "navaid": "^1.0.2"
   },
