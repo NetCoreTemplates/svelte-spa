@@ -33,7 +33,7 @@ export default {
 		// some cases you'll need additional configuration —
 		// consult the documentation for details:
 		// https://github.com/rollup/rollup-plugin-commonjs
-		resolve({ preferBuiltins: false }),
+		resolve({ preferBuiltins: true }),
 		commonjs(),
 		json(),
 		globals(),
