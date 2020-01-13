@@ -6,9 +6,9 @@
 
 > Browse [source code](https://github.com/NetCoreTemplates/svelte-spa), view live demo [svelte-spa.web-templates.io](http://svelte-spa.web-templates.io) and install with [dotnet-new](http://docs.servicestack.net/dotnet-new):
 
-    $ dotnet tool install -g web
+    $ dotnet tool install -g x
 
-    $ web new svelte-spa ProjectName
+    $ x new svelte-spa ProjectName
 
 ## Development workflow
 
