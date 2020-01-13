@@ -4,7 +4,7 @@
 
 [![](https://raw.githubusercontent.com/ServiceStack/Assets/master/csharp-templates/svelte-spa.png)](http://svelte-spa.web-templates.io/)
 
-> Browse [source code](https://github.com/NetCoreTemplates/svelte-spa), view live demo [svelte-spa.web-templates.io](http://svelte-spa.web-templates.io) and install with [dotnet-new](http://docs.servicestack.net/dotnet-new):
+> Browse [source code](https://github.com/NetCoreTemplates/svelte-spa), view live demo [svelte-spa.web-templates.io](http://svelte-spa.web-templates.io) and install with [dotnet-new](https://docs.servicestack.net/dotnet-new):
 
     $ dotnet tool install -g x
 
