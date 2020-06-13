@@ -1,10 +1,11 @@
 /* Options:
-Date: 2019-04-26 12:57:28
-Version: 5.51
+Date: 2020-06-13 21:48:30
+Version: 5.91
 Tip: To override a DTO option, remove "//" prefix before updating
 BaseUrl: https://localhost:5001
 
 //GlobalNamespace:
+//MakePropertiesOptional: False
 //AddServiceStackTypes: True
 //AddResponseStatus: False
 //AddImplicitVersion:
@@ -81,8 +82,6 @@ var Hello = /** @class */ (function () {
 export { Hello };
 // @Route("/auth")
 // @Route("/auth/{provider}")
-// @Route("/authenticate")
-// @Route("/authenticate/{provider}")
 // @DataContract
 var Authenticate = /** @class */ (function () {
     function Authenticate(init) {
