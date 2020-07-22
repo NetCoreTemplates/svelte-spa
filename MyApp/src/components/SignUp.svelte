@@ -1,8 +1,10 @@
-<script>
+<script lang="ts">
+import { splitOnFirst, toPascalCase } from '@servicestack/client';
 import Input from '../shared/Input.svelte';
 import CheckBox from '../shared/CheckBox.svelte';
 import ErrorSummary from '../shared/ErrorSummary.svelte';
-import { signin, signout, client, Register, redirect, checkAuth, splitOnFirst, toPascalCase } from '../shared';
+import { signin, signout, client, redirect, checkAuth } from '../shared';
+import { Register } from '../shared/dtos';
 import classNames from "classnames";
 
 let loading = false;
@@ -76,7 +78,7 @@ const submit = async () => {
 		<div class="pt-3">
 			<b>Quick Populate:</b>
 			<p class="pt-1">
-				<button class="btn btn-outline-info btn-sm" on:click|preventDefault={e => newUser('new@@user.com')}>new@user.com</button>
+				<button class="btn btn-outline-info btn-sm" on:click|preventDefault={e => newUser('new@user.com')}>new@user.com</button>
 			</p>
 		</div>
 	</form>

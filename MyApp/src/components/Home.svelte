@@ -1,6 +1,7 @@
-<script>
+<script lang="ts">
 import Input from '../shared/Input.svelte';
-import { userSession, signout, client, Hello } from '../shared'
+import { userSession, signout, client } from '../shared';
+import { Hello } from '../shared/dtos';
 
 export let result = '';
 export let txtName = 'Svelte';

@@ -1,6 +1,6 @@
-<script>
+<script lang="ts">
 import { createEventDispatcher } from 'svelte';
-import { errorResponse, errorResponseExcept } from '../shared'
+import { errorResponse, errorResponseExcept } from '@servicestack/client';
 import classNames from "classnames";
 
 export let responseStatus = null;
@@ -8,8 +8,8 @@ export let type = 'text';
 export let name = '';
 export let placeholder = '';
 export let value = '';
-export let model = '';
 export let className = '';
+export const model = '';
 
 $: errorField = errorResponse.call({responseStatus}, name);
 $: cls = classNames('form-control', {'is-invalid':errorField}, className || 'form-control-lg');

@@ -1,5 +1,5 @@
-<script>
-import { errorResponse, errorResponseExcept } from '../shared'
+<script lang="ts">
+import { errorResponse, errorResponseExcept } from '@servicestack/client';
 
 export let except = '';
 export let responseStatus = null;
