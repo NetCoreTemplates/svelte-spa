@@ -13,7 +13,7 @@ export let component = null;
 let session:AuthenticateResponse = null;
 
 export const routes = [
-	{ path: '/',           label:'Home',       component:Home },
+	{ path: '/',           label:'Home',       component:Home,      exact:true },
 	{ path: '/about',      label:'About',      component:About },
 	{ path: '/signin',     label:'Sign In',    component:SignIn,    hide:'auth' },
 	{ path: '/signup',     label:'Sign Up',    component:SignUp,    hide:'auth' },
@@ -31,3 +31,15 @@ userSession.subscribe(x => {
 		? visibleRoutes.filter(x => x.hide !== 'auth' || x.show === 'auth')
 		: visibleRoutes.filter(x => x.show !== 'auth'));
 });
+
+// required to patch in missing pushstate event
+(function(history:any) {
+    var pushState = history.pushState;
+    history.pushState = function(state) {
+        const ret = pushState.apply(history, arguments);
+        window.dispatchEvent(new CustomEvent('pushstate', {
+            detail: { state, location }
+		}));
+		return ret;
+    };
+})(window.history);

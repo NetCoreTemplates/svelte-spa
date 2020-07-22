@@ -1,7 +1,7 @@
 <script lang="ts">
 import { createEventDispatcher } from 'svelte';
 import { errorResponse, errorResponseExcept } from '@servicestack/client';
-import classNames from "classnames";
+import classNames from 'classnames';
 
 export let name = '';
 export let className = '';

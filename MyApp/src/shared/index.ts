@@ -1,6 +1,6 @@
 import { JsonServiceClient } from '@servicestack/client';
 import { writable } from 'svelte/store';
-import { navigate } from "svelte-routing";
+import { navigate } from 'svelte-routing';
 
 export var client = new JsonServiceClient('/');
 

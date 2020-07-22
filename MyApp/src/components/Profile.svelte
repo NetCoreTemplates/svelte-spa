@@ -1,6 +1,6 @@
 <script lang="ts">
   import { userSession, signout } from '../shared';
-  import { AuthenticateResponse } from "../shared/dtos";
+  import { AuthenticateResponse } from '../shared/dtos';
   
   let user:AuthenticateResponse = null;
   userSession.subscribe(x => user = x);

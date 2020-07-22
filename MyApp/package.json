@@ -5,7 +5,7 @@
     "postinstall": "npm run build",
     "build": "rollup -c",
     "dev": "rollup -c -w",
-    "dtos": "cd src/shared && x typescript && tsc -m ES6 dtos.ts",
+    "dtos": "cd src && x typescript",
     "publish": "npm run build && dotnet publish -c Release"
   },
   "dependencies": {

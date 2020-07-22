@@ -1,13 +1,10 @@
 <svelte:window on:pushstate={x => pathname = x.target.location.pathname} on:popstate={x => pathname = x.target.location.pathname}/>
 
 <script lang="ts">
-import { get } from 'svelte/store';
-import { Router, Link, Route, link } from "svelte-routing";
-import Error404 from './components/Error404.svelte';
-import { routes, routeLinks, component } from './shared/routes';
+import { Router, Route, link } from 'svelte-routing';
+import { routes, routeLinks } from './shared/routes';
 import { checkAuth } from './shared';
 
-export let url = "";
 let pathname = location.pathname;
 
 let links = null;
@@ -16,7 +13,7 @@ routeLinks.subscribe(x => links = x);
 checkAuth();
 </script>
 
-<Router url="{url}">
+<Router>
 <nav class="navbar navbar-expand-lg navbar-dark">
 	<div class="container">
 		<a class="navbar-brand" href="/">
