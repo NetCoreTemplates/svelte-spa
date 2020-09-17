@@ -6,8 +6,8 @@ import SignUp from '../components/SignUp.svelte';
 import Profile from '../components/Profile.svelte';
 import Error404 from '../components/Error404.svelte';
 import Forbidden from '../components/Forbidden.svelte';
-import { AuthenticateResponse } from './dtos';
 import { userSession } from './index';
+import type { AuthenticateResponse } from './dtos';
 
 export let component = null;
 let session:AuthenticateResponse = null;
