@@ -1,6 +1,6 @@
 # svelte-spa
 
-.NET Core 3.1 Svelte v3 Rollup Project Template integrated with ServiceStack Services and built-in Routing, User Registration and Sign Up forms.
+.NET Core 5.0 Svelte v3 Rollup Project Template integrated with ServiceStack Services and built-in Routing, User Registration and Sign Up forms.
 
 [![](https://raw.githubusercontent.com/ServiceStack/Assets/master/csharp-templates/svelte-spa.png)](http://svelte-spa.web-templates.io/)
 
@@ -50,7 +50,7 @@ When your App is ready to deploy, run the `publish` npm (or Gulp) script to pack
 
     $ npm run publish
 
-Which will create a production build of your App which then runs `dotnet publish -c Release` to Publish a Release build of your App in the `/bin/netcoreapp3.1/publish` folder which can then copied to remote server or an included in a Docker container to deploy your App.
+Which will create a production build of your App which then runs `dotnet publish -c Release` to Publish a Release build of your App in the `/bin/net5/publish` folder which can then copied to remote server or an included in a Docker container to deploy your App.
 
 ## Svelte template
 
