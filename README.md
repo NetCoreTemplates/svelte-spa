@@ -10,6 +10,12 @@
 
     $ x new svelte-spa ProjectName
 
+Alternatively write new project files directly into an empty repository, using the Directory Name as the ProjectName:
+
+    $ git clone https://github.com/<User>/<ProjectName>.git
+    $ cd <ProjectName>
+    $ x new svelte-spa
+
 ## Development workflow
 
 [![](https://raw.githubusercontent.com/ServiceStack/Assets/master/img/screencasts/svelte-spa-youtube.png)](https://youtu.be/cKlFABFECnQ)
