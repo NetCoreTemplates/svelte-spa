@@ -43,37 +43,37 @@ const submit = async () => {
 </script>
 
 
-<div>
-	<h3>Sign In</h3>
+<div class="row">
+    <div class="col-5">
+		<h3>Sign In</h3>
 
-	<form ref="form" on:submit|preventDefault={submit} class="{cls}">
-		<div class="form-group">
-			<ErrorSummary except="userName,password" responseStatus={responseStatus} />
-		</div>
-		<div class="form-group">
-			<Input name="userName" bind:value={userName} placeholder="Username" responseStatus={responseStatus} />
-		</div>
-		<div class="form-group">
-			<Input type="password" name="password" bind:value={password} placeholder="Password" responseStatus={responseStatus} />
-		</div>
-		<div class="form-group">
-			<CheckBox name="rememberMe" bind:checked={rememberMe} responseStatus={responseStatus}>
-				Remember Me
-			</CheckBox>
-		</div>
-		<div class="form-group">
-			<button type="submit" class="btn btn-lg btn-primary">Login</button>
-		</div>
-		<div class="form-group">
-			<a class="btn btn-outline-primary" href="/signup">Register New User</a>
-		</div>
-	</form>
+		<form ref="form" on:submit|preventDefault={submit} class="{cls}">
+			<div class="mb-3">
+				<ErrorSummary except="userName,password" responseStatus={responseStatus} />
+			</div>
+			<div class="mb-3">
+				<Input name="userName" bind:value={userName} placeholder="Username" responseStatus={responseStatus} />
+			</div>
+			<div class="mb-3">
+				<Input type="password" name="password" bind:value={password} placeholder="Password" responseStatus={responseStatus} />
+			</div>
+			<div class="mb-3">
+				<CheckBox name="rememberMe" bind:checked={rememberMe} responseStatus={responseStatus}>
+					Remember Me
+				</CheckBox>
+			</div>
+			<div class="mb-3">
+				<button type="submit" class="btn btn-lg btn-primary">Login</button>
+				<a href="/signup" class="ms-2 btn btn-outline-secondary btn-lg">Register New User</a>
+			</div>
+		</form>
 
-	<div class="pt-3">
-		<b>Quick Login:</b>
-		<p class="pt-1">
-			<button class="btn btn-outline-info btn-sm" on:click={e => switchUser('admin@email.com')}>admin@email.com</button>
-			<button class="btn btn-outline-info btn-sm" on:click={e => switchUser('new@user.com')}>new@user.com</button>
-		</p>
+		<div class="pt-3">
+			<h5>Quick Login:</h5>
+            <p class="btn-group">
+				<button class="btn btn-outline-info btn-sm" on:click={e => switchUser('admin@email.com')}>admin@email.com</button>
+				<button class="btn btn-outline-info btn-sm" on:click={e => switchUser('new@user.com')}>new@user.com</button>
+			</p>
+		</div>
 	</div>
 </div>

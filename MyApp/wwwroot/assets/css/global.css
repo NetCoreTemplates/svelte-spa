@@ -10,45 +10,17 @@ body {
     padding-left: 1.75rem;
     height: auto;
 }
-
 a {
-	color: rgb(0,100,200);
+	color: #FF3E00;
 	text-decoration: none;
 }
-a:hover {
-	text-decoration: underline;
+.nav-button-group {
+    display: flex;
+    flex-direction: column;
 }
-a:visited {
-	color: rgb(0,80,160);
+.btn-block a {
+    display: block;
 }
-
-input, button, select, textarea {
-	font-family: inherit;
-	font-size: inherit;
-	padding: 0.4em;
-	margin: 0 0 0.5em 0;
-	box-sizing: border-box;
-	border: 1px solid #ccc;
-	border-radius: 2px;
-}
-
-input:disabled {
-	color: #ccc;
-}
-
-input[type="range"] {
-	height: 0;
-}
-
-button {
-	background-color: #f4f4f4;
-	outline: none;
-}
-
-button:active {
-	background-color: #ddd;
-}
-
-button:focus {
-	border-color: #666;
+.nav-button-group .btn-block {
+    margin-bottom: .25rem;
 }

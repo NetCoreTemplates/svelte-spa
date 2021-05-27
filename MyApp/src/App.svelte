@@ -17,17 +17,16 @@ checkAuth();
 <nav class="navbar navbar-expand-lg navbar-dark">
 	<div class="container">
 		<a class="navbar-brand" href="/">
+			<i class="svg-logo svg-lg mr-1"></i>
 			My App
 		</a>
-		<div class="navbar-collapse">
-			<ul class="navbar-nav mr-auto">
-			{#each links as {path, label, exact} (label) }
-				<li class="nav-item" class:active={exact ? pathname == path : pathname.startsWith(path)}>
-					<a href="{path}" class="nav-link" use:link>{label}</a>
-				</li>
-			{/each}
-			</ul>
-		</div>
+		<ul class="navbar-nav">
+		{#each links as {path, label, exact} (label) }
+			<li class="nav-item">
+				<a href="{path}" class="nav-link" class:active={exact ? pathname == path : pathname.startsWith(path)} use:link>{label}</a>
+			</li>
+		{/each}
+		</ul>
 	</div>
 </nav>
 <div class="container">

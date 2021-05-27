@@ -19,32 +19,31 @@ onNameChanged({ detail: txtName });
 <style>
 </style>
 
-<div class="container">
-	<div class="row">
-		<div class="form-group">
-			<div>/hello API:</div>
+  <div class="row justify-content-between">
+    <div class="col col-1">
+      <i class="svg-logo svg-9x"></i>
+    </div>
+    <div class="col col-4 mt-4">
+		<div class="ms-4">
 			<Input bind:value={txtName} placeholder="Your name" on:input={onNameChanged} />
 			<h3 class="result pt-2">{result}</h3>
 		</div>
-	</div>
-	<div class="row">
+    </div>
+	<div class="col-md-auto"></div>
+	<div class="col col-4">
 	{#if $userSession}
-		<div>
+		<div class="text-right">
 			<p class="pt-3">Hi {$userSession.displayName}!</p> 
 			<button class="btn btn-primary" on:click={signout}>Sign Out</button>
 		</div>
 	{:else}
-		<div>
-			<p class="pt-3">You're not authenticated, please Sign In:</p>
-			<ul class="nav flex-column">
-				<li class="nav-item">
-					<a class="nav-link" href="/signin">Sign In</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="/signup">Register new User</a>
-				</li>
-			</ul>
+		<div class="text-right">
+			<p class="pt-3">You're not authenticated.</p>
+			<a href="/signin" class="btn btn-primary btn-sm">Sign In</a>
+			<a href="/signup" class="ms-2 btn btn-outline-secondary btn-sm">Register New User</a>
 		</div>
 	{/if}
 	</div>
-</div>
+  </div>
+
+<div class="container"></div>

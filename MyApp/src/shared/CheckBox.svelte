@@ -18,13 +18,13 @@ const handleChange = e => {
 }
 </script>
 
-<div className={cls}>
+<div class={cls}>
     <input type="checkbox" id={name} name={name} bind:checked value="true"
-            className={clsInput} onChange={handleChange} />
+            class={clsInput} onChange={handleChange} />
     
-    <label className="form-check-label" for={name}><slot></slot></label>
+    <label class="form-check-label" for={name}><slot></slot></label>
 </div>
 
 {#if errorField}
-    <div className="invalid-feedback">{errorField}</div>
+    <div class="invalid-feedback">{errorField}</div>
 {/if}
