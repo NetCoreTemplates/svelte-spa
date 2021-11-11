@@ -1,50 +1,18 @@
-using System.Collections.Generic;
-using Funq;
+using Microsoft.Extensions.DependencyInjection;
 using ServiceStack;
 using ServiceStack.Auth;
-using ServiceStack.Caching;
-using ServiceStack.Configuration;
 using ServiceStack.FluentValidation;
+
+[assembly: HostingStartup(typeof(MyApp.ConfigureAuth))]
 
 namespace MyApp
 {
-    // Run before AppHost.Configure()
-    public class ConfigureAuth : IConfigureAppHost
+    // Add any additional metadata properties you want to store in the Users Typed Session
+    public class CustomUserSession : AuthUserSession
     {
-        public void Configure(IAppHost appHost)
-        {
-            var AppSettings = appHost.AppSettings;
-            appHost.Plugins.Add(new AuthFeature(() => new CustomUserSession(),
-                new IAuthProvider[] {
-                    new CredentialsAuthProvider(), //Enable UserName/Password Credentials Auth
-                }));
-
-            appHost.Plugins.Add(new RegistrationFeature()); //Enable /register Service
-
-            //override the default registration validation with your own custom implementation
-            appHost.RegisterAs<CustomRegistrationValidator, IValidator<Register>>();
-
-            appHost.Register<ICacheClient>(new MemoryCacheClient()); //Store User Sessions in Memory
-
-            appHost.Register<IAuthRepository>(new InMemoryAuthRepository()); //Store Authenticated Users in Memory
-
-            CreateUser(appHost, "admin@email.com", "Admin User", "p@55wOrd", roles:new[]{ RoleNames.Admin });
-        }
-
-        // Add initial Users to the configured Auth Repository
-        public void CreateUser(IAppHost appHost, string email, string name, string password, string[] roles)
-        {
-            var authRepo = appHost.TryResolve<IAuthRepository>();
-            var newAdmin = new UserAuth { Email = email, DisplayName = name };
-            var user = authRepo.CreateUserAuth(newAdmin, password);
-            authRepo.AssignRoles(user, roles);
-        }
     }
     
-    // Type class to store additional metadata in Users Session
-    public class CustomUserSession : AuthUserSession {}
-    
-    // Custom Validator to add custom validators to built-in /register Service requiring DisplayName and ConfirmPassword
+// Custom Validator to add custom validators to built-in /register Service requiring DisplayName and ConfirmPassword
     public class CustomRegistrationValidator : RegistrationValidator
     {
         public CustomRegistrationValidator()
@@ -55,5 +23,28 @@ namespace MyApp
                 RuleFor(x => x.ConfirmPassword).NotEmpty();
             });
         }
+    }
+
+    public class ConfigureAuth : IHostingStartup
+    {
+        public void Configure(IWebHostBuilder builder) => builder
+            .ConfigureServices(services => {
+                //services.AddSingleton<ICacheClient>(new MemoryCacheClient()); //Store User Sessions in Memory Cache (default)
+            })
+            .ConfigureAppHost(appHost => {
+                var appSettings = appHost.AppSettings;
+                appHost.Plugins.Add(new AuthFeature(() => new CustomUserSession(),
+                    new IAuthProvider[] {
+                        new CredentialsAuthProvider(appSettings),     /* Sign In with Username / Password credentials */
+                        new FacebookAuthProvider(appSettings),        /* Create App https://developers.facebook.com/apps */
+                        new GoogleAuthProvider(appSettings),          /* Create App https://console.developers.google.com/apis/credentials */
+                        new MicrosoftGraphAuthProvider(appSettings),  /* Create App https://apps.dev.microsoft.com */
+                    }));
+
+                appHost.Plugins.Add(new RegistrationFeature()); //Enable /register Service
+
+                //override the default registration validation with your own custom implementation
+                appHost.RegisterAs<CustomRegistrationValidator, IValidator<Register>>();
+            });
     }
 }
