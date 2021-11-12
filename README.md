@@ -1,6 +1,6 @@
 # svelte-spa
 
-.NET 5.0 Svelte v3 Rollup Project Template integrated with ServiceStack Services and built-in Routing, User Registration and Sign Up forms.
+.NET 6.0 Svelte v3 Rollup Project Template integrated with ServiceStack Services and built-in Routing, User Registration and Sign Up forms.
 
 [![](https://raw.githubusercontent.com/ServiceStack/Assets/master/csharp-templates/svelte-spa.png)](http://svelte-spa.web-templates.io/)
 
