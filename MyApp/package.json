@@ -9,7 +9,7 @@
     "publish": "npm run build && dotnet publish -c Release"
   },
   "dependencies": {
-    "@servicestack/client": "^1.1.10",
+    "@servicestack/client": "^1.1.17",
     "classnames": "^2.3.1",
     "svelte-routing": "^1.6.0"
   },
