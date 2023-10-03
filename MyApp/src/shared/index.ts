@@ -6,7 +6,7 @@ export var client = new JsonServiceClient('/');
 
 import { Authenticate, AuthenticateResponse } from './dtos';
 
-export let userSession = writable(null);
+export let userSession = writable<AuthenticateResponse|null>(null);
 
 export const signin = (response:AuthenticateResponse) => userSession.update(_ => response);
 export const signout = async (redirect=true) => {

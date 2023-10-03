@@ -3,4 +3,8 @@
 
   "include": ["src/**/*"],
   "exclude": ["node_modules/*", "__sapper__/*", "public/*", "bin/*", "wwwroot/*"],
+  "compilerOptions": {
+    "sourceMap": true,
+    "strictPropertyInitialization": false
+  }
 }

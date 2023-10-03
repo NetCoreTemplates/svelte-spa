@@ -10,7 +10,7 @@ import { userSession } from './index';
 import type { AuthenticateResponse } from './dtos';
 
 export let component = null;
-let session:AuthenticateResponse = null;
+let session:AuthenticateResponse|null = null;
 
 export const routes = [
 	{ path: '/',           label:'Home',       component:Home,      exact:true },
@@ -35,7 +35,7 @@ userSession.subscribe(x => {
 // required to patch in missing pushstate event
 (function(history:any) {
     var pushState = history.pushState;
-    history.pushState = function(state) {
+    history.pushState = function(state:any) {
         const ret = pushState.apply(history, arguments);
         window.dispatchEvent(new CustomEvent('pushstate', {
             detail: { state, location }
